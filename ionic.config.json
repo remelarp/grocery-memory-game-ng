@@ -1,0 +1,7 @@
+{
+  "name": "grocery-memory-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
