@@ -35,8 +35,8 @@ A fun and interactive **memory game** built with **Angular** and **Ionic**. Test
    npm install
 3. **Run the App**:
    ```bash
-   ng serve
-   Open http://localhost:4200 in your browser.
+   ionic serve
+   Open http://localhost:8100 in your browser.
 4. **Build for Production**:
    ```bash
-   ng build --prod
+   ionic build --prod
