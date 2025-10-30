@@ -1,0 +1,22 @@
+ion-thumbnail {
+  --size: 64px;
+  margin-right: 16px;
+}
+
+ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-size: 1.5rem;
+}
+
+ion-text {
+  display: block;
+  margin-top: 20px;
+}
+
+.countdown {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--ion-color-primary); /* Use Ionic's primary color (e.g., blue) */
+  padding-right: 16px;
+}

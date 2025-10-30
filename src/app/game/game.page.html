@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="onBackToGameList()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Select {{ count }} Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    @for (row of [0, 1, 2, 3, 4]; track row) {
+      <ion-row>
+        @for (col of [0, 1, 2]; track col) {
+          @if (gameItems[row * 3 + col]) {
+            <ion-col size="4" class="p-6">
+              <ion-img
+                [src]="gameItems[row * 3 + col].image"
+                [alt]="gameItems[row * 3 + col].name"
+                [ngClass]="{'selected': selectedItems.includes(gameItems[row * 3 + col].id)}"
+                (click)="toggleSelection(gameItems[row * 3 + col].id)"
+              ></ion-img>
+            </ion-col>
+          }
+        }
+      </ion-row>
+    }
+  </ion-grid>
+
+  <ion-action-sheet
+    [isOpen]="actionSheetOpen"
+    [header]="actionSheetHeader"
+    [subHeader]="actionSheetSubHeader"
+    [buttons]="actionSheetButtons"
+    (didDismiss)="onActionSheetClick($event)"
+  ></ion-action-sheet>
+</ion-content>

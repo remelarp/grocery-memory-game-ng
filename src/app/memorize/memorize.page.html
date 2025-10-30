@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button default-href="/grocery-list"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Memorize {{ items.length }} items</ion-title>
+        <ion-label slot="end" class="countdown">{{ countdown }}s</ion-label>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">&nbsp;&nbsp;</div>
+    @if (showItems) {
+    <ion-list>
+        @for (item of items; track item.id) {
+        <ion-item>
+            <!-- Display image if available, otherwise show name -->
+            @if (!item.image) {
+            <ion-thumbnail slot="start">
+                <img [src]="item.image" alt="{{ item.name }}" />
+            </ion-thumbnail>
+            }
+            <ion-label class="p-3"><span class="text-3xl">{{ item.name }}</span></ion-label>
+        </ion-item>
+        }
+    </ion-list>
+    }
+    @if (!showItems) {
+    <ion-text color="medium">
+        <h3 style="text-align: center;">Time's up! Items hidden.</h3>
+    </ion-text>
+    }
+</ion-content>

@@ -1,0 +1,23 @@
+ion-grid {
+  padding: 16px;
+}
+
+ion-img {
+  width: 98px;
+  height: 98px;
+  margin: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+ion-img.selected {
+  border: 2px solid var(--ion-color-primary);
+  background: var(--ion-color-light);
+}
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

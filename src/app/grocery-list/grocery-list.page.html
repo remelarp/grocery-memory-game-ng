@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Grocery List</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar class="pl-8">
+            <ion-title size="large"><span>Grocery List</span></ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid class="pl-8 pt-8">
+        <ion-row>
+            @for (count of itemCounts; track count) {
+                <ion-col size="4" class="pb-4" (click)="goToMemorizePage(count)">
+                    <div class="flex items-center justify-center w-24 h-24 rounded-full border-2 border-blue-600">
+                        <div class="flex items-center justify-center w-21 h-21 rounded-full bg-blue-600 text-blue-100 font-bold text-2xl">{{ count }}</div>
+                    </div>
+                    <div class="p-3 font-bold uppercase text-base">Level {{ count - 2 }}</div>
+                </ion-col>
+            }
+        </ion-row>
+    </ion-grid>
+</ion-content>
